@@ -1,0 +1,24 @@
+.page-wrapper {
+  margin: auto;
+  padding: 0 3rem;
+  max-width: $width-wrapper;
+  width: 100%;
+
+  &.page-wrapper--full-width {
+    max-width: 100%;
+  }
+
+  &.page-wrapper--size-big {
+    max-width: 80%;
+  }
+
+  @media(max-width: 1400px) {
+    &.page-wrapper--size-big {
+      max-width: 100%;
+    }
+  }
+
+  @media(max-width: 767px) {
+    padding: 0 2rem;
+  }
+}

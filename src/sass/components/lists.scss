@@ -1,0 +1,33 @@
+.list-social {
+  li {
+    display: inline-block;
+    margin-left: 1rem;
+
+    a {
+      color: $secondary-color;
+      @include transition(0.2s);
+      &:hover {color: #ffffff;@include transition(0.2s);}
+    }
+  }
+
+  @media(max-width: 767px) {
+    li {
+      margin-left: 2rem;
+    }
+  }
+}
+
+.list-links {
+  li {
+    display: inline-block;
+    font-size: 1.5rem;
+    position: relative;
+    margin-left: 1rem;
+    &:after {content: "-";margin-left: 1rem;}
+    &:last-child:after {content: "";}
+    a {
+      color: #db8d8d;
+      text-decoration: underline;
+    }
+  }
+}

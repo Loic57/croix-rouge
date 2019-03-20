@@ -1,0 +1,112 @@
+.page-header {
+  @include flex-container();
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  padding-left: calc(50vw - (1170px / 2) + 3rem);
+  padding-right: calc(50vw - (1170px / 2) + 3rem);
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+
+  .page-header__redbar {
+    background-color: $main-color;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+  }
+
+  .page-header__left {
+    @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+       margin-left: -62%;
+    }
+
+    @media(max-width: 1200px) {
+      @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+         margin-left: -57%;
+      }
+    }
+
+    @media(max-width: 767px) {
+      @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+         margin-left: 0%;
+      }
+    }
+    .page-header__logo {
+      display: inline-block;
+      position: relative;
+      width: 250px;
+      z-index: 1;
+
+      .logo__text {
+        background-color: $main-color;
+        padding: 0.3rem 0;
+        color: #ffffff;
+        text-transform: uppercase;
+        font-weight: 600;
+        text-align: center;
+        span {font-weight: 300;}
+      }
+    }
+  }
+
+  .page-header__right {
+    @include flex-container();
+
+    .list-social {
+      position: relative;
+      top: 11px;
+    }
+
+    .nav-lang {
+      margin-left: 3rem;
+    }
+  }
+
+  @media(max-width: 1200px) {
+    padding: 0 3rem;
+  }
+}
+
+@media(max-width: 767px) {
+  .page-header {
+    padding: 0;
+    @include flex-wrap();
+
+    .page-header__left {
+      flex: 0 0 100%;
+      max-width: 100%;
+      background-color: #ffffff;
+
+      .page-header__logo {
+        width: 100%;
+        img {width: 175px;}
+      }
+    }
+
+    .page-header__right {
+      flex: 0 0 100%;
+      max-width: 100%;
+      position: absolute;
+      z-index: 2;
+      right: 2rem;
+      top: 0;
+      @include flex-direction-column-reverse();
+
+      .list-social {
+        position: static;
+
+      }
+    }
+
+    .page-header__redbar {
+      display: none;
+    }
+  }
+}

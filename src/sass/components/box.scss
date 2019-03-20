@@ -1,0 +1,242 @@
+.box-text-1 {
+	h1, p {
+		color: #ffffff;
+	}
+
+	h1 {text-transform: uppercase;}
+
+	p {
+		font-weight: 300;
+		padding-right: 70%;
+		font-size: 1.8rem;
+		strong {font-weight: 700;}
+	}
+
+	@media(max-width: 1024px) {
+		p {
+			padding-right: 50%;
+		}
+	}
+
+	@media(max-width: 1023px) {
+		text-align: center;
+		p {
+			position: relative;
+			padding-right: 0%;
+		}
+	}
+
+	@media(max-width: 767px) {
+		p {
+			font-size: 1.6rem;
+		}
+	}
+}
+
+.box-text-2 {
+	font-size: 2rem;
+	p {margin-bottom: 0;color: #ffffff;}
+	p:first-child {
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	p:last-child {font-style: italic;}
+
+	@media(max-width: 1023px) {
+		width: 100%;
+	}
+}
+
+.box-image-1 {
+	position: absolute;
+	right: 0;
+	top: 50px;
+	min-height: 800px;
+	max-height: 800px;
+	width: 50vw;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	@media(max-width: 1023px) {
+		width: 100vw;
+	}
+}
+
+
+.box-donation {
+	background-color: $main-color;
+	width: 500px;
+	padding: 2rem;
+	margin-left: 16rem;
+	margin-right: 5rem;
+
+	.box-donation__header {
+		@include flex-container();
+		@include flex-v-align-center();
+		justify-content: space-between;
+		margin-bottom: 2rem;
+
+		img {width: 35px;}
+		p {color: #ffffff;margin: 0;}
+		p:first-child {font-weight: 700;}
+
+	}
+
+	.box-donation__content {
+		form {
+			@include flex-container();
+			@include flex-v-align-center();
+
+			position: relative;
+			@include flex-container();
+
+			input[type=number]::-webkit-inner-spin-button,
+			input[type=number]::-webkit-outer-spin-button
+			{
+				-webkit-appearance: none;
+				margin: 0;
+			}
+
+			input[type=number]
+			{
+				-moz-appearance: textfield;
+				width: 100%;
+				text-align: right;
+				padding-right: 3rem;
+				font-weight: 700;
+				font-size: 2.8rem;
+				height: 70px;
+			}
+
+			.quantity-input {
+				flex: 0 0 30%;
+				position: relative;
+
+				&:after {
+					position: absolute;
+					right: 10px;
+					content: "€";
+					top: 13px;
+					font-size: 3rem;
+					font-weight: 600;
+					color: #b8b8b8;
+				}
+			}
+
+			.quantity-button {
+				background-color: #ffffff;
+				position: relative;
+				cursor: pointer;
+				height: 70px;
+				border-left: 1px solid #eee;
+				text-align: center;
+				color: #333;
+				font-size: 2.3rem;
+				line-height: 3;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				-o-user-select: none;
+				user-select: none;
+				font-weight: 900;
+				@include transition(0.2s);
+
+				&:hover {
+					background-color:  #e16967;
+					@include transition(0.2s);
+				}
+			}
+
+			.quantity-button.quantity-up {
+				border-bottom: 1px solid #eee;
+				flex: 0 0 10%;
+			}
+
+			.quantity-button.quantity-down {
+				flex: 0 0 10%;
+			}
+
+
+			input {
+				padding: 1rem;
+				border: 2px solid #ffffff;
+				color: #000;font-weight: 600
+			}
+
+			button {
+				height: 70px;
+				flex: 0 0 50%;
+				max-width: 50%;
+				border: 2px solid #ffffff;
+				padding: 1.9rem 1.8rem 1.8rem 1.8rem;
+				background-color: $main-color;
+				border-left: 0;
+				color: #ffffff;
+				text-transform: uppercase;
+				font-weight: 600;
+				cursor: pointer;
+
+				&:hover {
+					background-color: #ffffff;
+					color: $main-color;
+					@include transition(0.2s);
+				}
+			}
+		}
+	}
+
+	@media(max-width: 1023px) {
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 2;
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		padding: 1rem;
+
+		.box-donation__header {
+			margin-bottom: 1rem;
+			img {width: 30px;}
+		}
+	}
+}
+
+.box-article {
+	background-color: #ffffff;
+	text-align: center;
+	display: block;
+	padding: 3rem 3rem;
+	position: relative;
+	min-height: 100%;
+
+	&:before {
+		padding-top: 100%;
+		content: "";
+	}
+
+	&:hover {
+		.btn {text-decoration: underline;}
+	}
+
+	h2 {
+		color: #252525;
+		text-transform: uppercase;
+		font-size: 2.4rem;
+		letter-spacing: -1px;
+		margin-bottom: 0;
+		margin-top: 0;
+		span {color: #999994;}
+	}
+
+	.box-article__text {
+		color: #6b6b6b;
+		font-weight: 300;
+	}
+
+	@media(max-width: 1024px) {
+		padding: 2rem;
+	}
+
+}

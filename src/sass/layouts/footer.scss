@@ -1,0 +1,43 @@
+.page-footer {
+  background-color: $main-color;
+
+  .grid-flex {
+    @include flex-v-align-center();
+    .column {
+      &:first-child {
+        text-align: left;
+      }
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+
+  @media(max-width: 1023px) {
+    margin-bottom: 13rem;
+  }
+
+  @media(max-width: 767px) {
+    margin-bottom: 13rem;
+    padding: 1rem 0;
+
+    .grid-flex {
+      @include flex-v-align-center();
+      .column {
+        padding: 0.5rem;
+        &:first-child {
+          text-align: center;
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+
+        &:last-child {
+          text-align: center;
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -12,14 +12,15 @@ document.addEventListener('DOMContentLoaded', function () {
       btnUp = quantity.find('.quantity-up'),
       btnDown = quantity.find('.quantity-down'),
       min = input.attr('min'),
-      max = input.attr('max');
+      max = input.attr('max'),
+      step = input.attr('step');
 
   btnUp.click(function () {
     var oldValue = parseFloat(input.val());
     if (oldValue >= max) {
       var newVal = oldValue;
     } else {
-      var newVal = oldValue + 1;
+      var newVal = oldValue + parseInt(step);
     }
     quantity.find("input").val(newVal);
     quantity.find("input").trigger("change");
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (oldValue <= min) {
       var newVal = oldValue;
     } else {
-      var newVal = oldValue - 1;
+      var newVal = oldValue - parseInt(step);
     }
     quantity.find("input").val(newVal);
     quantity.find("input").trigger("change");

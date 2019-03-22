@@ -1,4 +1,5 @@
 .box-text-1 {
+	position: relative;
 	h1, p {
 		color: #ffffff;
 	}
@@ -10,6 +11,19 @@
 		padding-right: 70%;
 		font-size: 1.8rem;
 		strong {font-weight: 700;}
+	}
+
+	p {
+		font-weight: 300;
+		padding-right: 50%;
+		font-size: 1.8rem;
+		strong {font-weight: 700;}
+	}
+
+	@media(max-width: 1440px) {
+		p {
+			margin-top: 0;
+		}
 	}
 
 	@media(max-width: 1024px) {
@@ -27,8 +41,15 @@
 	}
 
 	@media(max-width: 767px) {
+		margin-top: 1.5rem;
 		p {
 			font-size: 1.6rem;
+		}
+	}
+
+	@media(max-width: 375px) {
+		p {
+			font-size: 1.5rem;
 		}
 	}
 }
@@ -45,12 +66,16 @@
 	@media(max-width: 1023px) {
 		width: 100%;
 	}
+
+	@media(max-width: 767px) {
+		display: none;
+	}
 }
 
 .box-image-1 {
 	position: absolute;
 	right: 0;
-	top: 50px;
+	top: -60px;
 	min-height: 800px;
 	max-height: 800px;
 	width: 50vw;
@@ -59,6 +84,16 @@
 
 	@media(max-width: 1023px) {
 		width: 100vw;
+	}
+
+	@media(max-width: 767px) {
+		background-position: 25% 15%;
+		background-size: 145%;
+	}
+
+	@media(max-width: 375px) {
+		background-position: 15% 15%;
+		background-size: 135%;
 	}
 }
 
@@ -180,6 +215,32 @@
 					background-color: #ffffff;
 					color: $main-color;
 					@include transition(0.2s);
+				}
+			}
+
+			@media(max-width: 767px) {
+				input[type=number] {
+					height: 50px;
+				}
+				.quantity-button {
+					height: 50px;
+				}
+
+				.quantity-button.quantity-up {
+					line-height: 2.1;
+				}
+
+				.quantity-button.quantity-down {
+					line-height: 2.1;
+				}
+
+				.quantity-input {
+					&:after {top: 3px;}
+				}
+
+				button {
+					height: 50px;
+					line-height: 0;
 				}
 			}
 		}
